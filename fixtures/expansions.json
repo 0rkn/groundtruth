@@ -1,0 +1,382 @@
+[
+  {
+    "id": "01-corporate-plan-p1-0",
+    "questions": [
+      "Does the board ensure that key governance documents are reviewed and refreshed on a regular schedule?",
+      "Does the board assign clear ownership and accountability for document approval and maintenance?",
+      "Does the board make approved policies publicly accessible to demonstrate transparency?"
+    ]
+  },
+  {
+    "id": "01-corporate-plan-p1-1",
+    "questions": [
+      "Does the board monitor trends in operating surplus and intervene when performance declines?",
+      "Does the board assess the strategic implications of remaining regionally focused versus pursuing growth?",
+      "Does the board evaluate the adequacy of staffing and resources in relation to the size of the housing portfolio?"
+    ]
+  },
+  {
+    "id": "01-corporate-plan-p2-2",
+    "questions": [
+      "Does the board scrutinise the rise in reported damp and mould cases and seek evidence of underlying causes?",
+      "Does the board evaluate whether the decarbonisation cost model is realistic given the available financial headroom?",
+      "Does the board monitor the increase in rent arrears and the high proportion of Universal Credit tenants as a risk indicator?"
+    ]
+  },
+  {
+    "id": "01-corporate-plan-p2-3",
+    "questions": [
+      "Does the board regularly test compliance with the interest‑cover covenant and plan for limited covenant capacity?",
+      "Does the board manage exposure to variable‑rate debt and consider its impact on cash‑flow resilience?",
+      "Does the board align development spending ambitions with the constraints of the tightest covenant?"
+    ]
+  },
+  {
+    "id": "01-corporate-plan-p2-4",
+    "questions": [
+      "Does the board set clear, measurable safety targets that are linked to independent verification?",
+      "Does the board require that audit and risk committees receive unredacted compliance reports each year?",
+      "Does the board deliberately streamline strategic aims to focus board attention on priority outcomes?"
+    ]
+  },
+  {
+    "id": "01-corporate-plan-p3-5",
+    "questions": [
+      "Does the board establish specific EPC and retrofit targets and monitor progress against them?",
+      "Does the board ensure that resident‑voice mechanisms (e.g., scrutiny panel, service review) influence service design?",
+      "Does the board track resident satisfaction and complaint handling performance as indicators of trust?"
+    ]
+  },
+  {
+    "id": "01-corporate-plan-p3-6",
+    "questions": [
+      "Does the board set performance targets that are justified by benchmarking rather than optimism?",
+      "Does the board challenge whether a modest improvement target is sufficient to drive real change?",
+      "Does the board periodically reassess target ambition in light of sector trends and internal capability?"
+    ]
+  },
+  {
+    "id": "01-corporate-plan-p3-7",
+    "questions": [
+      "Does the board evaluate growth or merger opportunities against the constraints of financial covenants?",
+      "Does the board balance external stakeholder pressure with the need to preserve covenant compliance?",
+      "Does the board consider the trade‑off of rejecting grant funding when it conflicts with financial capacity?"
+    ]
+  },
+  {
+    "id": "01-corporate-plan-p3-8",
+    "questions": [
+      "Does the board review multi‑year financial forecasts to ensure sustainability of surplus and margins?",
+      "Does the board monitor projected interest‑cover ratios to confirm covenant compliance over the plan horizon?",
+      "Does the board assess whether planned capital investment aligns with strategic priorities and financial limits?"
+    ]
+  },
+  {
+    "id": "01-corporate-plan-p4-9",
+    "questions": [
+      "Does the board conduct scenario‑based stress testing to gauge resilience to adverse financial shocks?",
+      "Does the board approve detailed mitigation actions, such as deferrable capital spend, and track their implementation?",
+      "Does the board evaluate whether the agreed mitigation schedule is sufficient to protect covenant ratios under downside scenarios?"
+    ]
+  },
+  {
+    "id": "01-corporate-plan-p4-10",
+    "questions": [
+      "Does the board use the new report format to assess whether performance against each target is satisfactory?",
+      "Does the board regularly challenge executives on trends and peer‑comparison data presented in the quarterly reports?",
+      "Does the board ensure that the strategic performance report moves beyond describing outcomes to evaluating their quality?"
+    ]
+  },
+  {
+    "id": "01-corporate-plan-p4-11",
+    "questions": [
+      "Does the board monitor progress on closing the identified capability gaps and hold senior management to agreed timelines?",
+      "Does the board obtain independent verification of compliance data rather than relying solely on executive supplied information?",
+      "Does the board evaluate the adequacy of the plan to build internal retrofit capability versus outsourcing it?"
+    ]
+  },
+  {
+    "id": "01-corporate-plan-p4-12",
+    "questions": [
+      "Does the board rigorously scrutinise executive‑proposed plans before approval, even when the meeting agenda is limited to an away day?",
+      "Does the board consider whether approving the plan without amendment reflects sufficient deliberation and challenge?",
+      "Does the board ensure that the approval process includes a formal assessment of risks and assumptions embedded in the plan?"
+    ]
+  },
+  {
+    "id": "01-corporate-plan-p5-13",
+    "questions": [
+      "Does the board record individual members’ concerns and track subsequent actions to address them?",
+      "Does the board assess the impact of funding‑envelope worries on the feasibility of retrofit targets?",
+      "Does the board follow up to verify that recorded concerns are reflected in subsequent decision‑making or mitigation plans?"
+    ]
+  },
+  {
+    "id": "02-risk-register-p1-0",
+    "questions": []
+  },
+  {
+    "id": "02-risk-register-p1-1",
+    "questions": [
+      "Does the board regularly review and update target risk scores to ensure they reflect current mitigation progress?",
+      "Does the board evaluate whether the risk‑appetite statement is being adhered to across the risk register?",
+      "Does the board assess the effectiveness of controls when the net risk score remains unchanged over multiple reporting periods?"
+    ]
+  },
+  {
+    "id": "02-risk-register-p1-2",
+    "questions": []
+  },
+  {
+    "id": "02-risk-register-p2-3",
+    "questions": [
+      "Does the board investigate why the net risk score for safety compliance has remained unchanged for four quarters?",
+      "Does the board hold the responsible executive accountable for meeting the electrical backlog deadline of 31 December 2026?",
+      "Does the board evaluate whether the existing controls (dashboards, contractor KPIs, escalation procedures) are sufficient to prevent resident harm?"
+    ]
+  },
+  {
+    "id": "02-risk-register-p2-4",
+    "questions": [
+      "Does the board intervene when a high‑scoring risk, such as incomplete stock data, shows a worsening trend?",
+      "Does the board ensure that the owner meets the commitments for the single asset data platform and the 100 % condition survey timetable?",
+      "Does the board track the closure of Awaab’s Law gaps against the stated October deadline and require remedial action if lagging?"
+    ]
+  },
+  {
+    "id": "02-risk-register-p2-5",
+    "questions": [
+      "Does the board follow up on the committee’s request for a revised risk‑target trajectory and hold the executive to a timely response?",
+      "Does the board question why the target score of 10 has remained static since 2023 and assess the implications for risk management?",
+      "Does the board ensure that any new trajectory aligns with the Trust’s broader strategic and risk‑appetite objectives?"
+    ]
+  },
+  {
+    "id": "02-risk-register-p2-6",
+    "questions": [
+      "Does the board regularly reassess the financial viability of its EPC upgrade targets against the long‑term business plan?",
+      "Is the board actively monitoring the lack of a delivery partner and in‑house PAS 2035 capability for the retrofit programme?",
+      "How does the board ensure that shortfalls in funding do not force reductions in other strategic investments or breach public commitments?"
+    ]
+  },
+  {
+    "id": "02-risk-register-p3-7",
+    "questions": [
+      "Does the board receive and act on monthly treasury reports and quarterly covenant forecasts to safeguard covenant compliance?",
+      "Is the board holding delivery partners to agreed procurement timelines, such as the October 2026 deadline?",
+      "Does the board track progress on the planned actions (e.g., variable‑rate exposure review, deferrable capital schedule) to ensure they are delivered on schedule?"
+    ]
+  },
+  {
+    "id": "02-risk-register-p3-8",
+    "questions": [
+      "Does the board challenge the executive on rent arrears performance when it exceeds the target and on the effectiveness of the welfare advice team?",
+      "How rigorously does the board assess cyber‑security controls, given the pending tabletop exercise and phishing click‑rate shortfall?",
+      "Is the board ensuring that a tested contingency plan exists for the key repairs contractor that represents a large share of the budget?"
+    ]
+  },
+  {
+    "id": "02-risk-register-p4-9",
+    "questions": [
+      "Does the board evaluate the impact of high executive turnover and plan for succession to maintain governance continuity?",
+      "How does the board monitor cost overruns in development schemes and ensure that contingency reserves are sufficient?",
+      "Is the board proactive in addressing the risk of a governance downgrade by reviewing compliance self‑assessments and scheduling independent reviews?"
+    ]
+  },
+  {
+    "id": "02-risk-register-p4-10",
+    "questions": [
+      "Does the board regularly review data‑quality issues that could undermine strategic decision‑making and regulatory reporting?",
+      "Is the board ensuring that tenancy data are consolidated into a single customer record to improve reporting accuracy?",
+      "How does the board address the low response rate to the TSM perception survey to ensure stakeholder views are adequately captured?"
+    ]
+  },
+  {
+    "id": "02-risk-register-p4-11",
+    "questions": []
+  },
+  {
+    "id": "02-risk-register-p4-12",
+    "questions": [
+      "Does the board ensure that all material risks have appropriate third‑line assurance coverage?",
+      "How does the board prioritize audit resources when certain risks (e.g., SR07, SR11) lack assurance?",
+      "Is the board reviewing and updating the internal audit plan to reflect the agreed priorities and emerging risk exposures?"
+    ]
+  },
+  {
+    "id": "03-board-pack-extract-p1-0",
+    "questions": [
+      "Does the board receive board packs with sufficient lead time to allow thorough review before meetings?",
+      "How does the board assess whether the length and content of the pack (247 pages, 14 papers) are proportionate to the agenda items?",
+      "Is the board regularly evaluating the effectiveness of its meeting structure, including time allocations for each agenda item?"
+    ]
+  },
+  {
+    "id": "03-board-pack-extract-p2-1",
+    "questions": [
+      "Does the board monitor whether agenda items are appropriately classified (note, discuss, approve) to focus deliberative time on strategic issues?",
+      "How does the board ensure that critical risk topics (e.g., variable‑rate exposure, retrofit partner procurement) receive adequate attention during meetings?",
+      "Is the board evaluating the adequacy of post‑meeting evaluation processes to improve future meeting efficiency?"
+    ]
+  },
+  {
+    "id": "03-board-pack-extract-p2-2",
+    "questions": [
+      "Does the board track performance against satisfaction targets and intervene when actual scores lag behind the target?",
+      "How does the board compare its satisfaction trends to peer medians to assess relative performance?",
+      "Is the board using the trend data to inform strategic actions aimed at improving overall tenant satisfaction?"
+    ]
+  },
+  {
+    "id": "03-board-pack-extract-p3-3",
+    "questions": [
+      "Does the board intervene promptly when key performance trends (e.g., arrears, voids, staff turnover) move in a worsening direction?",
+      "How effectively does the board use peer benchmark data to set realistic targets and drive improvement?",
+      "To what extent does the board hold the executive accountable for meeting agreed‑upon service standards such as repair satisfaction and EPC ratings?"
+    ]
+  },
+  {
+    "id": "03-board-pack-extract-p4-4",
+    "questions": [
+      "Does the board seek sufficient independent assurance on the issues raised in the report before accepting the executive’s conclusions?",
+      "How routinely does the board challenge the executive on the adequacy of the evidence underpinning the report?",
+      "Is the board’s discussion of the report structured to identify gaps in oversight rather than merely noting it?"
+    ]
+  },
+  {
+    "id": "03-board-pack-extract-p4-5",
+    "questions": [
+      "Does the board evaluate whether the October 2026 deadline for closing Awaab’s Law gaps is realistic given resource constraints?",
+      "How does the board balance the cost of accelerating remediation (£310,000) against the risk of non‑compliance and reputational damage?",
+      "Is the board monitoring the escalation of case volumes and the number of cases open beyond target to ensure timely executive action?"
+    ]
+  },
+  {
+    "id": "03-board-pack-extract-p4-6",
+    "questions": [
+      "Does the board have clear criteria for delegating contract‑signing authority to the Chief Executive?",
+      "How does the board ensure that the four‑year framework delivers value for money and aligns with strategic objectives?",
+      "Is the board monitoring drawdown against the £18 m ceiling to avoid breaching the annual £6 m limit?"
+    ]
+  },
+  {
+    "id": "03-board-pack-extract-p4-7",
+    "questions": [
+      "Is the board confident that the 60/40 quality‑price weighting reflects the Trust’s risk appetite and strategic priorities?",
+      "How does the board verify that the risk assessment embedded in the evaluation adequately captures long‑term implementation risks?",
+      "Does the board require a post‑award review to confirm that the preferred bidder’s performance matches the evaluation scores?"
+    ]
+  },
+  {
+    "id": "03-board-pack-extract-p5-8",
+    "questions": [
+      "Does the board have a documented process for setting the annual delegation limits that control the £18 m framework drawdown?",
+      "How is the board addressing the lack of in‑house PAS 2035 capability when relying on the partner’s unguaranteed services?",
+      "Is the board assessing the financial exposure of potential overruns beyond the two‑year contract period?"
+    ]
+  },
+  {
+    "id": "03-board-pack-extract-p5-9",
+    "questions": [
+      "Does the board provide strategic guidance on which option to pursue before the September decision paper is finalised?",
+      "How does the board ensure that the preferred direction reflects an analysis of risk, cost and alignment with the Trust’s long‑term plan?",
+      "Is the board tracking progress against the timeline for the September decision to avoid implementation delays?"
+    ]
+  },
+  {
+    "id": "03-board-pack-extract-p5-10",
+    "questions": [
+      "How does the board evaluate the trade‑off between fixing variable‑rate exposure and the covenant impact of each refinancing option?",
+      "Does the board conduct a robust scenario analysis to assess the break‑cost implications of each debt‑management choice?",
+      "Is the board ensuring that the chosen option maximises financial stability while adhering to the Trust’s risk appetite?"
+    ]
+  },
+  {
+    "id": "03-board-pack-extract-p5-11",
+    "questions": [
+      "Does the board’s self‑assessment process provide meaningful insight into meeting effectiveness beyond a single‑sentence summary?",
+      "How regularly does the board review whether the three standing questions (focus, contribution, information quality) are being met in practice?",
+      "Is there evidence that the board uses feedback from these questions to adjust agenda setting or information provision?"
+    ]
+  },
+  {
+    "id": "03-board-pack-extract-p5-12",
+    "questions": []
+  },
+  {
+    "id": "03-board-pack-extract-p6-13",
+    "questions": [
+      "Does the board have a process for promptly addressing vacancies in tenant representation?",
+      "How effectively does the board involve senior executives when a resident‑related board seat becomes vacant?",
+      "Is the board monitoring the impact of the tenant member’s resignation on resident voice and decision‑making?"
+    ]
+  },
+  {
+    "id": "04-board-calendar-p1-0",
+    "questions": [
+      "Does the board ensure that its committees have a balanced mix of independent and executive members to provide unbiased oversight?",
+      "How adequately is resident input captured given the absence of a dedicated resident committee?",
+      "Is the board exercising appropriate oversight of the subsidiary’s activities and its limited meeting schedule?"
+    ]
+  },
+  {
+    "id": "04-board-calendar-p1-1",
+    "questions": []
+  },
+  {
+    "id": "04-board-calendar-p2-2",
+    "questions": []
+  },
+  {
+    "id": "04-board-calendar-p2-3",
+    "questions": []
+  },
+  {
+    "id": "04-board-calendar-p2-4",
+    "questions": [
+      "Does the board regularly review both internal and external audit plans to maintain robust risk oversight?",
+      "Are strategic and financial performance items consistently placed on the agenda to enable timely decision‑making?",
+      "How effectively does the board integrate capital planning and sustainability initiatives into its meeting programmes?"
+    ]
+  },
+  {
+    "id": "04-board-calendar-p3-5",
+    "questions": [
+      "Is the board providing sufficient ongoing strategic discussion beyond the annual away day?",
+      "How regularly does the board revisit its risk appetite, and does the current frequency meet best‑practice standards?",
+      "Does the board receive comprehensive people‑related information (pay, culture, workforce) often enough to inform governance decisions?"
+    ]
+  },
+  {
+    "id": "04-board-calendar-p3-6",
+    "questions": [
+      "Is the frequency and depth of resident‑scrutiny reporting sufficient for the board to act on resident concerns?",
+      "How consistently is the external board effectiveness review being commissioned in line with regulator expectations?",
+      "Are individual director appraisals, including the Chair’s, being completed as scheduled to support performance oversight?"
+    ]
+  },
+  {
+    "id": "04-board-calendar-p3-7",
+    "questions": [
+      "Does the board have clear role definitions for the Chair and Senior Independent Director to avoid overlap?",
+      "Are term expiry dates aligned with succession planning to prevent gaps in board leadership?",
+      "How effectively does the board leverage the Senior Independent Director’s participation on multiple committees?"
+    ]
+  },
+  {
+    "id": "04-board-calendar-p4-8",
+    "questions": [
+      "Does the board have a documented succession plan to address multiple upcoming term expiries?",
+      "How promptly is the vacant tenant board seat being advertised and filled to maintain resident representation?",
+      "Are committee memberships balanced to ensure sufficient expertise and independence after upcoming member departures?"
+    ]
+  },
+  {
+    "id": "04-board-calendar-p4-9",
+    "questions": [
+      "Does the board ensure that meeting papers are provided with sufficient lead‑time to allow informed deliberation?",
+      "Does the board allocate enough meeting time, including private sessions for non‑executives, to fulfil its oversight duties?",
+      "Does the board provide regular, independent forums for non‑executive directors to discuss matters without executives present?"
+    ]
+  }
+]

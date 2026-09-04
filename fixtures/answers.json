@@ -1,0 +1,156 @@
+{
+  "client": "client-set-a",
+  "note": "Hand-written answer phrases, copied verbatim from the documents. A question is answered if the retrieved text CONTAINS one of its phrases — not if it matches a chunk id, which is what the earlier chunk-based gold set tested and why it measured the wrong thing. Phrases survive any chunk size because a sentence is the same sentence however the text is cut. null means nothing in these documents answers the question: an abstention case, counted separately and never as a failure. Excludes 05-previous-board-review, whose claims belong to the prior consultant.",
+  "answers": {
+    "res-01": [
+      "Total pack: 247 pages across 14 papers",
+      "four working days before the meeting; our standard is seven"
+    ],
+    "res-02": [
+      "Papers are due seven calendar days before a meeting",
+      "papers were issued on time for three of the seven Board meetings held"
+    ],
+    "res-03": [
+      "That the Board approves the appointment of the preferred bidder",
+      "That the Board notes the report"
+    ],
+    "res-04": ["Nine of the fourteen items are for noting"],
+    "res-05": [
+      "our reporting has historically told the Board what happened but not whether it was good"
+    ],
+    "res-06": [
+      "our target scores were set in 2023 and most have not moved",
+      "Net score unchanged at 16 for four consecutive quarters"
+    ],
+    "res-07": [
+      "it receives compliance data from the executive and has no independent verification"
+    ],
+    "res-08": null,
+    "res-09": null,
+    "res-10": null,
+    "res-11": [
+      "Between February and December there is no scheduled strategy item"
+    ],
+    "res-12": ["There is no customer or resident committee"],
+    "res-13": [
+      "Scrutiny panel minutes appended twice a year, in July and February"
+    ],
+    "res-14": null,
+    "res-15": [
+      "Of the seventeen risks, eleven have third line assurance in the last two years"
+    ],
+    "res-16": [
+      "has its own board of three, all executives of the Trust, meeting twice a year"
+    ],
+
+    "com-01": [
+      "the last was in 2023 and the Regulator",
+      "An external board effectiveness review is due"
+    ],
+    "com-02": null,
+    "com-03": null,
+    "com-04": [
+      "The tenant board member resigned in April 2026 and the seat has not been advertised"
+    ],
+    "com-05": ["There is no written succession plan"],
+    "com-06": null,
+    "com-07": null,
+    "com-08": [
+      "asked the executive to bring a revised trajectory in November"
+    ],
+    "com-09": null,
+    "com-10": [
+      "there is no record of one having taken place in 2025 or 2026"
+    ],
+    "com-11": [
+      "Resident voice reaches the Board through the resident scrutiny panel, which reports to the Executive"
+    ],
+    "com-12": [
+      "the four cases in the last twelve months where our own review found we responded inadequately"
+    ],
+    "com-13": [
+      "following the resignation of the tenant board member in April 2026"
+    ],
+    "com-14": null,
+    "com-15": [
+      "changed what the regulator expects us to be able to evidence, not just what we do"
+    ],
+    "com-16": [
+      "Our tightest covenant is interest cover at 110% on the Wessex Regional facility"
+    ],
+
+    "exe-01": [
+      "Annually, the Board reviews the plan itself, not just performance against it"
+    ],
+    "exe-02": [
+      "Overall the Trust has delivered a solid quarter with improvements in a majority of customer-facing measures"
+    ],
+    "exe-03": ["this was originally due March 2026 and has slipped twice"],
+    "exe-04": ["The Board has 300 minutes of"],
+    "exe-05": null,
+    "exe-06": [
+      "agreed by the Board in principle but not yet itemised"
+    ],
+    "exe-07": [
+      "The Board itself has not held a discussion of risk appetite since September 2025"
+    ],
+    "exe-08": [
+      "Arrears and voids remain challenging and are being addressed through the income collection restructure"
+    ],
+    "exe-09": [
+      "The away day in January is the only scheduled strategy session"
+    ],
+    "exe-10": [
+      "the paper proposes an annual delegation but does not state who sets it"
+    ],
+    "exe-11": [
+      "the 2026/27 internal audit plan should cover SR11 and SR07 as a priority"
+    ],
+    "exe-12": [
+      "Electrical backlog cleared by 31 December 2026"
+    ],
+    "exe-13": [
+      "Two schemes currently forecast over budget by a combined"
+    ],
+    "exe-14": null,
+    "exe-15": [
+      "The Audit and Risk Committee raised in October 2025 that it receives compliance data from the executive"
+    ],
+    "exe-16": [
+      "traceable to something a resident said"
+    ],
+
+    "beh-01": [
+      "did we spend our time on the right things, did everyone contribute, and was the information good enough"
+    ],
+    "beh-02": [
+      "asked that her concern about the deliverability of the retrofit target within the funding envelope be recorded"
+    ],
+    "beh-03": [
+      "following the Audit and Risk Committee"
+    ],
+    "beh-04": [
+      "The Committee noted that the target score of 10 has been in place since 2023"
+    ],
+    "beh-05": [
+      "approved without amendment at the Board meeting of 18 March 2026"
+    ],
+    "beh-06": null,
+    "beh-07": null,
+    "beh-08": ["The last four meetings each recorded the sentence"],
+    "beh-09": null,
+    "beh-10": [
+      "the framework maximum of £18m exceeds the £6m annual phasing limit set in SR03"
+    ],
+    "beh-11": ["The Board discussed and rejected three options in January 2026"],
+    "beh-12": ["Responses are recorded in the minutes as a single sentence"],
+    "beh-13": ["The TSM results go to the Board once a year in May"],
+    "beh-14": null,
+    "beh-15": [
+      "The Committee noted that the target score of 10 has been in place since 2023"
+    ],
+    "beh-16": [
+      "The Board accepted that this means turning down grant we could otherwise win"
+    ]
+  }
+}

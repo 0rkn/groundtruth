@@ -1,0 +1,230 @@
+{
+  "note": "Hand-labelled by one person BEFORE the judge was written, so the judge is run blind against them. SUPPORTED means a governance consultant would accept the line as relevant evidence for that question — not that it proves the question's assertion, since an evidence line's job is to frame rather than to settle.",
+  "labelled": 28,
+  "claims": [
+    {
+      "questionId": "res-01",
+      "question": "Board and committee packs are concise, timely and decision ready.",
+      "line": "The board pack comprised 247 pages across 14 papers.",
+      "quote": null,
+      "label": "SUPPORTED",
+      "why": ""
+    },
+    {
+      "questionId": "res-05",
+      "question": "The board has the management information it needs to hold the executive to account.",
+      "line": "Quarterly, the Board receives a strategic performance report against fifteen measures, three per aim plus six financial.",
+      "quote": "Quarterly, the Board receives a strategic performance report against fifteen measures, three per aim plus six financial.",
+      "label": "SUPPORTED",
+      "why": ""
+    },
+    {
+      "questionId": "res-09",
+      "question": "Board members have the time available to discharge their duties properly.",
+      "line": "The agenda allocates 300 minutes for the meeting.",
+      "quote": null,
+      "label": "NOT_SUPPORTED",
+      "why": "meeting length is not member availability; 300 minutes says nothing about whether members have time to prepare or discharge duties"
+    },
+    {
+      "questionId": "com-01",
+      "question": "Annual board effectiveness reviews take place, with external input at least every three years, and actions are tracked.",
+      "line": "An external board effectiveness review was last carried out in 2023, and the regulator’s Code expects one every three years.",
+      "quote": "the last was in 2023 and the Regulator’s Code expects one every three years",
+      "label": "SUPPORTED",
+      "why": ""
+    },
+    {
+      "questionId": "com-16",
+      "question": "The board understands the covenants the organisation is bound by and what would breach them.",
+      "line": "The organisation’s tightest covenant is interest cover at 110% on the Wessex Regional facility, with a forecast of 128% for 2026/27.",
+      "quote": "Our tightest covenant is interest cover at 110% on the Wessex Regional facility; we forecast 128% for 2026/27",
+      "label": "SUPPORTED",
+      "why": ""
+    },
+    {
+      "questionId": "com-09",
+      "question": "The chair leads the board effectively and manages the discussion well.",
+      "line": "The Board was content with the conduct of the meeting at each of the last four meetings.",
+      "quote": "the Board was content with the conduct of the meeting.",
+      "label": "SUPPORTED",
+      "why": ""
+    },
+    {
+      "questionId": "exe-01",
+      "question": "The board sets strategic outcomes and monitors progress to outcomes, not just outputs.",
+      "line": "Quarterly, the Board receives a strategic performance report against fifteen measures, three per aim plus six financial.",
+      "quote": "Quarterly, the Board receives a strategic performance report against fifteen measures, three per aim plus six financial.",
+      "label": "SUPPORTED",
+      "why": ""
+    },
+    {
+      "questionId": "exe-13",
+      "question": "The board oversees the development programme against cost, time and risk together.",
+      "line": "The Board reviews the development programme, a scheme of 380 homes over three years (£26.2m), with two schemes forecast over budget by £740,000 and 22 months remaining, as noted in the risk register.",
+      "quote": "Two schemes currently forecast over budget by a combined £740,000",
+      "label": "SUPPORTED",
+      "why": ""
+    },
+    {
+      "questionId": "exe-04",
+      "question": "Agenda time is allocated in proportion to the significance of the business.",
+      "line": "64 % of agenda items (9 of 14) were recorded for noting.",
+      "quote": null,
+      "label": "SUPPORTED",
+      "why": ""
+    },
+    {
+      "questionId": "exe-06",
+      "question": "The board holds the executive to account for delivery against plan.",
+      "line": "Quarterly, the Board receives a strategic performance report against fifteen measures, three per aim plus six financial.",
+      "quote": "Quarterly, the Board receives a strategic performance report against fifteen measures, three per aim plus six financial.",
+      "label": "SUPPORTED",
+      "why": ""
+    },
+    {
+      "questionId": "exe-07",
+      "question": "Risk appetite is set by the board and used in decisions rather than recorded and left.",
+      "line": "The Board agreed the Trust’s risk appetite statement in September 2025: averse for safety and compliance, cautious for finance and treasury, open for development and commercial activity, and open for digital and technology change.",
+      "quote": "The Board agreed the Trust’s risk appetite statement in September 2025: averse for safety and compliance, cautious for finance and treasury, open for development and commercial activity, and open for digital and technology change.",
+      "label": "SUPPORTED",
+      "why": ""
+    },
+    {
+      "questionId": "beh-02",
+      "question": "Debate is open, and dissent can be expressed without cost.",
+      "line": "The Chair invites brief comments at the end of each meeting.",
+      "quote": "The Chair invites brief comments at the end of each meeting.",
+      "label": "NOT_SUPPORTED",
+      "why": "an invitation to comment at the end of a meeting is evaluation, not evidence about whether dissent can be voiced during debate"
+    },
+    {
+      "questionId": "beh-08",
+      "question": "All board members contribute, and no one is consistently silent.",
+      "line": "The standing questions are: did we spend our time on the right things, did everyone contribute, and was the information good enough.",
+      "quote": "The standing questions are: did we spend our time on the right things, did everyone contribute, and was the information good enough.",
+      "label": "SUPPORTED",
+      "why": ""
+    },
+    {
+      "questionId": "beh-13",
+      "question": "The board hears directly from residents and service users, not only about them.",
+      "line": "Resident voice reaches the Board through the resident scrutiny panel, which reports to the Executive and whose minutes are appended to the Housing report twice a year.",
+      "quote": "Resident voice reaches the Board through the resident scrutiny panel, which reports to the Executive and whose minutes are appended to the Housing report twice a year.",
+      "label": "SUPPORTED",
+      "why": ""
+    },
+    {
+      "questionId": "res-05",
+      "question": "The board has the management information it needs to hold the executive to account.",
+      "line": "The performance report now ‘includes target, trend, peer comparison and a named executive’.",
+      "quote": "includes target, trend, peer comparison and a named executive",
+      "label": "SUPPORTED",
+      "why": ""
+    },
+    {
+      "questionId": "res-09",
+      "question": "Board members have the time available to discharge their duties properly.",
+      "line": "The agenda allocated 300 minutes for the meeting.",
+      "quote": null,
+      "label": "NOT_SUPPORTED",
+      "why": "same as 3"
+    },
+    {
+      "questionId": "com-01",
+      "question": "Annual board effectiveness reviews take place, with external input at least every three years, and actions are tracked.",
+      "line": "The last external board effectiveness review was in 2023 and the Regulator’s Code expects one every three years.",
+      "quote": "the last was in 2023 and the Regulator’s Code expects one every three years",
+      "label": "SUPPORTED",
+      "why": ""
+    },
+    {
+      "questionId": "com-16",
+      "question": "The board understands the covenants the organisation is bound by and what would breach them.",
+      "line": "The tightest covenant is interest cover at 110% on the Wessex Regional facility, forecast at 128% for 2026/27, with limited room for a development overspend.",
+      "quote": "Our tightest covenant is interest cover at 110% on the Wessex Regional facility; we forecast 128% for 2026/27 with limited room for a development overspend.",
+      "label": "SUPPORTED",
+      "why": ""
+    },
+    {
+      "questionId": "com-09",
+      "question": "The chair leads the board effectively and manages the discussion well.",
+      "line": "The last four meetings each recorded the sentence “the Board was content with the conduct of the meeting.”",
+      "quote": "the Board was content with the conduct of the meeting.",
+      "label": "SUPPORTED",
+      "why": ""
+    },
+    {
+      "questionId": "exe-13",
+      "question": "The board oversees the development programme against cost, time and risk together.",
+      "line": "The agenda includes a “Development programme update” item.",
+      "quote": "Development programme update",
+      "label": "NOT_SUPPORTED",
+      "why": "an agenda item titled 'Development programme update' shows the item exists, not that it is overseen against cost, time and risk"
+    },
+    {
+      "questionId": "exe-02",
+      "question": "Performance reporting shows direction of travel against target, not a single point in time.",
+      "line": "The new report format, introduced from Q1 2026/27, includes target, trend, peer comparison and a named executive.",
+      "quote": "The new report format, introduced from Q1 2026/27, includes target, trend, peer comparison and a named executive.",
+      "label": "SUPPORTED",
+      "why": ""
+    },
+    {
+      "questionId": "beh-08",
+      "question": "All board members contribute, and no one is consistently silent.",
+      "line": "The Chair invites brief comments at the end of each meeting. The standing questions are: did we spend our time on the right things, did everyone contribute, and was the information good enough.",
+      "quote": "The Chair invites brief comments at the end of each meeting. The standing questions are: did we spend our time on the right things, did everyone contribute, and was the information good enough.",
+      "label": "SUPPORTED",
+      "why": ""
+    },
+    {
+      "questionId": "res-01",
+      "question": "Board and committee packs are concise, timely and decision ready.",
+      "line": "The board pack comprises 247 pages across 14 papers.",
+      "quote": null,
+      "label": "SUPPORTED",
+      "why": ""
+    },
+    {
+      "questionId": "com-01",
+      "question": "Annual board effectiveness reviews take place, with external input at least every three years, and actions are tracked.",
+      "line": "The external board effectiveness review was completed in 2023, and the Regulator’s Code expects one every three years.",
+      "quote": "the last was in 2023 and the Regulator’s Code expects one every three years",
+      "label": "SUPPORTED",
+      "why": ""
+    },
+    {
+      "questionId": "com-16",
+      "question": "The board understands the covenants the organisation is bound by and what would breach them.",
+      "line": "Our tightest covenant is interest cover at 110% on the Wessex Regional facility; we forecast 128% for 2026/27 with limited room for a development overspend.",
+      "quote": "Our tightest covenant is interest cover at 110% on the Wessex Regional facility; we forecast 128% for 2026/27 with limited room for a development overspend.",
+      "label": "SUPPORTED",
+      "why": ""
+    },
+    {
+      "questionId": "com-09",
+      "question": "The chair leads the board effectively and manages the discussion well.",
+      "line": "The minutes record that the Board was content with the conduct of the meeting at the last four meetings.",
+      "quote": "the Board was content with the conduct of the meeting.",
+      "label": "NOT_SUPPORTED",
+      "why": "attributes the quote to minutes, which were never supplied; the words come from the board pack's meeting-evaluation section"
+    },
+    {
+      "questionId": "exe-06",
+      "question": "The board holds the executive to account for delivery against plan.",
+      "line": "Performance against the fifteen strategic measures at 30 June 2026 was presented to the Board.",
+      "quote": "Performance against the fifteen strategic measures at 30 June 2026.",
+      "label": "SUPPORTED",
+      "why": ""
+    },
+    {
+      "questionId": "beh-01",
+      "question": "The board periodically reflects on groupthink and dominant voices, and adjusts practice to improve debate.",
+      "line": "The standing questions are: did we spend our time on the right things, did everyone contribute, and was the information good enough.",
+      "quote": "The standing questions are: did we spend our time on the right things, did everyone contribute, and was the information good enough.",
+      "label": "SUPPORTED",
+      "why": ""
+    }
+  ]
+}
