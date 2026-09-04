@@ -175,6 +175,23 @@ was kept: nothing beat it, and the alternatives cost more — semantic means twi
 chunks and an embedding call per sentence at ingest, for a difference that cannot be
 measured; structure-aware and whole-page both look worse and gain nothing in return.
 
+**Note: heading-splitting has been silently inert since the PDF extraction library was
+replaced.** `@firecrawl/pdf-inspector` shipped a compiled native binary that could not be
+made to load inside Vercel's bundled serverless function — confirmed present on disk,
+still failing to load, across several distinct fix attempts — so it was replaced with
+`unpdf`, which has no native dependency and cannot hit that class of failure at all.
+The tradeoff: `pdf-inspector` produced real markdown (`#` headings, tables); `unpdf`
+produces plain text. `toPassages` (`lib/passages.ts`) splits a passage on a markdown
+heading line as well as on the 140-word target, but with no real `#` syntax left in the
+extracted text, that half of the rule no longer fires — chunking today is effectively
+140-word splitting alone, "packed 140 words, headings off" in the table above, not the
+shipped "fixed 140 words + headings" row it's still labelled as. Content is unaffected —
+verified byte-identical facts and figures across both libraries on all 5 real documents,
+and every stage gate still passes — only the exact chunk boundaries differ. The table
+above already measured this exact comparison and found the difference statistically
+indistinguishable from noise, so this is a known, silent side effect rather than a
+regression, but it is real and worth fixing properly rather than leaving mislabelled.
+
 One measurement trap this table exists partly to document: **a word-target sweep only
 means something with heading-splitting turned off.** `toPassages` breaks on headings as
 well as on the word target, and on these documents headings dominate so completely that a

@@ -8,13 +8,30 @@
  * and nothing else: knowing the appraisal id does not get you a working link, and having
  * a working link tells you nothing about how to construct another one.
  *
- * POST /api/respond           { appraisalId, showAbsence? } -> { token }  (consultant mints a link)
- * GET  /api/respond?token=... -> { appraisal, showAbsence }               (director opens it)
- * PUT  /api/respond           { token, answers } -> { ok }                (director submits)
+ * POST /api/respond                          { appraisalId, showAbsence? } -> { token }
+ *   (consultant mints a link)
+ * GET  /api/respond?token=...&response=...   -> { appraisal, answers, showAbsence, submitted }
+ *   (a director opens it)
+ * PUT  /api/respond                           { token, response, answers } -> { ok }
+ *   (a director submits)
  *
- * No aggregation lives here. This stores what one director submitted, keyed by their own
- * token; a consultant-facing summary across several directors' tokens is a further step
- * that reads what this writes, not something this route needs to know about.
+ * ONE LINK, MANY RESPONDENTS. A consultant realistically shares one link with a whole
+ * board, the way a Google Form link works — not one freshly-minted link per director. The
+ * token alone used to BE the answer record, which meant a second person opening the same
+ * link silently overwrote the first person's submission. `response` is a second,
+ * independent id the browser generates for itself (see `app/respond/[token]/page.tsx`) and
+ * keeps in its own `localStorage`, scoped to this token — not sent by the consultant, not
+ * known in advance, never shared between two different browsers. Two people on the same
+ * link get two different `response` ids without coordinating, exactly the way two people
+ * filling in the same Google Form both get their own row. Answers are stored at
+ * `answers:<token>:<response>`, not `answers:<token>` — the token alone now only
+ * identifies the LINK (which appraisal, whether to show absence), never one person's
+ * answers.
+ *
+ * No aggregation lives here. This stores what one respondent submitted, keyed by their own
+ * token *and* response id; a consultant-facing summary across every response under an
+ * appraisal's tokens is a further step (`lib/aggregate.ts`) that reads what this writes,
+ * not something this route needs to know about.
  *
  * WHY `showAbsence` LIVES ON THE TOKEN, NOT THE APPRAISAL. The default a director sees for
  * an unanswered question is nothing at all — no question is skipped, but nothing is said
@@ -31,7 +48,15 @@ import type { Appraisal } from "@/lib/appraisal";
 export const runtime = "nodejs";
 
 const tokenKey = (token: string) => `respond:${token}`;
-const answersKey = (token: string) => `answers:${token}`;
+const answersKey = (token: string, response: string) => `answers:${token}:${response}`;
+
+/**
+ * `response` ids come from the browser, not from anything this server controls — so they
+ * are constrained to a safe, boring shape rather than trusted as-is. They only ever need
+ * to be unguessable-enough and URL/KV-key-safe, never cryptographically strong the way the
+ * token itself is: a response id only ever matters within the browser that generated it.
+ */
+const RESPONSE_ID = /^[A-Za-z0-9_-]{8,64}$/;
 
 interface TokenRecord {
   appraisalId: string;
@@ -70,7 +95,9 @@ export async function POST(request: Request): Promise<Response> {
 }
 
 export async function GET(request: Request): Promise<Response> {
-  const token = new URL(request.url).searchParams.get("token");
+  const params = new URL(request.url).searchParams;
+  const token = params.get("token");
+  const response = params.get("response");
   if (!token) return Response.json({ error: "Missing token." }, { status: 400 });
 
   const raw = await kvGet(tokenKey(token));
@@ -82,28 +109,37 @@ export async function GET(request: Request): Promise<Response> {
     return Response.json({ error: "The questionnaire behind this link no longer exists." }, { status: 404 });
   }
 
-  const existingAnswers = await kvGet(answersKey(token));
+  // No `response` id yet means this browser has never opened this link before — a blank
+  // form, nothing to read back. `page.tsx` generates one and stores it in `localStorage`
+  // before it ever calls this with a `response` id attached.
+  const existingAnswers =
+    response && RESPONSE_ID.test(response) ? await kvGet(answersKey(token, response)) : null;
 
   return Response.json({
     appraisal: JSON.parse(appraisalRaw) as Appraisal,
     answers: existingAnswers ? (JSON.parse(existingAnswers) as Record<string, number>) : {},
     showAbsence: record.showAbsence,
+    submitted: existingAnswers !== null,
   });
 }
 
 export async function PUT(request: Request): Promise<Response> {
-  let body: { token?: string; answers?: Record<string, number> };
+  let body: { token?: string; response?: string; answers?: Record<string, number> };
   try {
     body = await request.json();
   } catch {
-    return Response.json({ error: "Expected JSON with a token and answers." }, { status: 400 });
+    return Response.json({ error: "Expected JSON with a token, a response id, and answers." }, { status: 400 });
   }
 
-  const { token, answers } = body;
+  const { token, response, answers } = body;
   if (!token || !answers) return Response.json({ error: "Missing token or answers." }, { status: 400 });
+  if (!response || !RESPONSE_ID.test(response)) {
+    return Response.json({ error: "Missing or malformed response id." }, { status: 400 });
+  }
 
   const raw = await kvGet(tokenKey(token));
   if (!raw) return Response.json({ error: "This link is not recognised." }, { status: 404 });
+  const record = JSON.parse(raw) as TokenRecord;
 
   // Every value must be a whole number 1-5 — the five points on the questionnaire's own
   // scale — so a malformed submission cannot corrupt whatever reads this back later.
@@ -113,6 +149,22 @@ export async function PUT(request: Request): Promise<Response> {
     }
   }
 
-  await kvPut(answersKey(token), JSON.stringify(answers));
+  // Partial submission is no longer allowed — a respondent answers every question in one
+  // sitting, not some now and the rest on a later visit. Enforced here, not only by
+  // disabling the button client-side, since a direct call to this route could otherwise
+  // still save an incomplete set of answers.
+  const appraisalRaw = await kvGet(record.appraisalId);
+  if (!appraisalRaw) {
+    return Response.json({ error: "The questionnaire behind this link no longer exists." }, { status: 404 });
+  }
+  const appraisal = JSON.parse(appraisalRaw) as Appraisal;
+  if (Object.keys(answers).length !== appraisal.questionCount) {
+    return Response.json(
+      { error: `All ${appraisal.questionCount} questions must be answered before submitting.` },
+      { status: 400 },
+    );
+  }
+
+  await kvPut(answersKey(token, response), JSON.stringify(answers));
   return Response.json({ ok: true });
 }

@@ -32,6 +32,10 @@ interface HistoryEntry {
  * Every appraisal's respondent count, in one pass over `respond:*` rather than one list
  * scan per row — the same records `lib/aggregate.ts` reads per-appraisal, grouped here
  * instead of filtered, because this route needs the count for every row at once.
+ *
+ * A count of RESPONSES, not of tokens — a single link shared with a whole board (see
+ * `app/api/respond/route.ts`) can hold more than one respondent, each its own
+ * `answers:<token>:<response>` entry, so the token itself is no longer what's counted.
  */
 async function respondentCounts(): Promise<Map<string, number>> {
   const keys = await kvListKeys("respond:");
@@ -42,7 +46,10 @@ async function respondentCounts(): Promise<Map<string, number>> {
       const raw = await kvGet(key);
       if (!raw) return;
       const record = JSON.parse(raw) as { appraisalId: string };
-      counts.set(record.appraisalId, (counts.get(record.appraisalId) ?? 0) + 1);
+      const token = key.slice("respond:".length);
+      const responseKeys = await kvListKeys(`answers:${token}:`);
+      if (responseKeys.length === 0) return;
+      counts.set(record.appraisalId, (counts.get(record.appraisalId) ?? 0) + responseKeys.length);
     }),
   );
   return counts;

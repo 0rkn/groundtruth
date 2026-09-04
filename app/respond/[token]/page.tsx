@@ -133,6 +133,32 @@ function Question({
   );
 }
 
+/**
+ * The id that makes this browser's submission its own, distinct from anyone else who
+ * opens the same link. A consultant shares one link with a whole board, the way a Google
+ * Form link works — the token alone can no longer BE the answer record (see
+ * `app/api/respond/route.ts`), or a second director opening it would overwrite the first.
+ *
+ * `localStorage`, not a cookie or the server: this only ever needs to survive reloads of
+ * the SAME link on the SAME browser, never to be readable by the server on first request,
+ * and never to follow a person across devices — that would need real sign-in, which this
+ * product deliberately doesn't have for a director.
+ */
+function responseIdFor(token: string): string {
+  const key = `gt-respond-id:${token}`;
+  try {
+    const existing = localStorage.getItem(key);
+    if (existing) return existing;
+    const fresh = crypto.randomUUID().replace(/-/g, "");
+    localStorage.setItem(key, fresh);
+    return fresh;
+  } catch {
+    // Private browsing, storage disabled, or similar — fall back to a one-visit id. Submit
+    // still works; only "come back later and see it's already in" stops working for them.
+    return crypto.randomUUID().replace(/-/g, "");
+  }
+}
+
 export default function Respond() {
   // Decoded defensively for the same reason as the report page's id — tokens are
   // base64url today (no characters that need encoding) so this is a no-op in practice,
@@ -144,10 +170,23 @@ export default function Respond() {
   useEffect(() => {
     (async () => {
       try {
-        const response = await fetch(`/api/respond?token=${encodeURIComponent(token)}`);
-        const body = (await response.json()) as { appraisal?: Appraisal; answers?: Record<string, number>; showAbsence?: boolean; error?: string };
+        const responseId = responseIdFor(token);
+        const response = await fetch(
+          `/api/respond?token=${encodeURIComponent(token)}&response=${encodeURIComponent(responseId)}`,
+        );
+        const body = (await response.json()) as {
+          appraisal?: Appraisal;
+          answers?: Record<string, number>;
+          showAbsence?: boolean;
+          submitted?: boolean;
+          error?: string;
+        };
         if (!response.ok || !body.appraisal) {
           setPhase({ kind: "failed", error: body.error ?? "This link did not work." });
+          return;
+        }
+        if (body.submitted) {
+          setPhase({ kind: "submitted" });
           return;
         }
         setPhase({ kind: "ready", appraisal: body.appraisal, answers: body.answers ?? {}, showAbsence: body.showAbsence ?? false });
@@ -164,7 +203,7 @@ export default function Respond() {
       const response = await fetch("/api/respond", {
         method: "PUT",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ token, answers: phase.answers }),
+        body: JSON.stringify({ token, response: responseIdFor(token), answers: phase.answers }),
       });
       if (!response.ok) throw new Error();
       setPhase({ kind: "submitted" });
@@ -244,14 +283,14 @@ export default function Respond() {
           <button
             type="button"
             onClick={() => void submit()}
-            disabled={submitting || answered === 0}
+            disabled={submitting || answered < total}
             className="cursor-pointer rounded-full bg-[var(--gt-green)] px-5 py-2.5 text-sm font-medium text-[var(--gt-cream)] transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
           >
             {submitting ? "Submitting…" : "Submit my answers"}
           </button>
           {answered < total ? (
             <p className="mt-2 text-xs text-[var(--gt-muted)]">
-              You can submit with some questions left blank, and return to this link to finish later.
+              Answer every question before submitting — {total - answered} left.
             </p>
           ) : null}
         </div>

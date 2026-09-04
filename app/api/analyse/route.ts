@@ -10,6 +10,7 @@
  * silently breaks the moment there is more than one instance, which is the kind of bug
  * that only appears after deployment.
  */
+import { after } from "next/server";
 import { extractDocument } from "@/lib/extract";
 import { appraisalKey } from "@/lib/cache";
 import { runAppraisal, type Upload } from "@/lib/run-appraisal";
@@ -19,8 +20,12 @@ import type { AppraisalStatus } from "@/lib/appraisal";
 
 export const runtime = "nodejs";
 
-/** Room for the slow first run. Generation alone is around three minutes. */
-export const maxDuration = 600;
+// 300 is the ceiling Vercel's Hobby plan allows — a higher value fails deployment
+// outright rather than degrading gracefully, which is how this was found. Generation
+// itself measures at 4-11 minutes depending on shape-(d)'s sequential pairing calls, so
+// a real long run can still exceed this on Hobby; there is no higher ceiling available on
+// that plan, only a paid one.
+export const maxDuration = 300;
 
 const jobKey = (id: string) => `job:${id}`;
 
@@ -99,13 +104,20 @@ export async function POST(request: Request): Promise<Response> {
 
   await put({ state: "queued" });
 
-  // Deliberately not awaited: the response returns while this continues. The interface
-  // polls for progress, and if the instance dies mid-run the status stays "running"
-  // until a fresh POST restarts it — which is the honest behaviour for a job queue we
-  // have not built, rather than pretending durability we do not have.
-  void runAppraisal(uploads, (step, done, total) => void put({ state: "running", step, done, total }))
-    .then((appraisal) => put({ state: "ready", appraisal }))
-    .catch((e: Error) => put({ state: "failed", error: e.message }));
+  // Deliberately not awaited: the response returns while this continues. Wrapped in
+  // `after()`, not a bare `void` promise — a serverless function freezes the instant its
+  // response is sent, and a detached promise with nothing telling the platform to keep
+  // the function alive can be killed mid-run with no warning, unlike a long-running local
+  // `next dev` process where the same code happens to work. `after()` is Next's own
+  // primitive for exactly this: schedule work for after the response, keep the function
+  // alive for it. If the instance dies anyway (a real crash, or `maxDuration`), the
+  // status stays "running" until a fresh POST restarts it — the honest behaviour for a
+  // job queue we have not built, rather than pretending durability we do not have.
+  after(() =>
+    runAppraisal(uploads, (step, done, total) => void put({ state: "running", step, done, total }))
+      .then((appraisal) => put({ state: "ready", appraisal }))
+      .catch((e: Error) => put({ state: "failed", error: e.message })),
+  );
 
   return Response.json({ id });
 }

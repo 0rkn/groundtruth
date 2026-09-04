@@ -46,25 +46,24 @@ export async function extractDocument(
   buffer: Buffer,
   filename: string,
 ): Promise<Document> {
-  // Loaded here, not at module scope: `pdf-inspector` ships a native binary, and a
-  // top-level import forces Next.js to resolve it during the BUILD's own page-data
-  // collection step — a different environment from where the deployed function actually
-  // runs, and the one where this native binding was failing to load on Vercel. Deferred
-  // to first use, it only ever loads inside the real runtime.
-  const { extractPagesMarkdownAsync } = await import("@firecrawl/pdf-inspector");
-  const result = await extractPagesMarkdownAsync(buffer, null);
+  // `unpdf` wraps pdfjs-dist: pure JS/WASM, no native binary, so no bundler/serverless
+  // resolution issues — replaces `@firecrawl/pdf-inspector`, whose compiled `.node`
+  // binding could not be made to load in Vercel's deployed function despite the file
+  // genuinely being present (confirmed via a temporary debug endpoint).
+  const { extractText } = await import("unpdf");
+  const result = await extractText(new Uint8Array(buffer));
 
-  if (!result.pages?.length) {
+  if (!result.text.length) {
     throw new Error(
       `No text could be read from ${filename}. If it is a scan rather than a text PDF it needs converting first.`,
     );
   }
 
   let notesStripped = 0;
-  const pages: Page[] = result.pages.map((p) => {
-    const { text, removed } = stripReviewerNotes(p.markdown ?? "");
+  const pages: Page[] = result.text.map((pageText, i) => {
+    const { text, removed } = stripReviewerNotes(pageText);
     notesStripped += removed;
-    return { number: p.page + 1, text }; // the extractor is 0-indexed
+    return { number: i + 1, text };
   });
 
   return {

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "check:extract": "node --experimental-strip-types scripts/check-extract.ts",
@@ -16,11 +16,11 @@
     "clear:cache": "node --env-file=.env --experimental-strip-types scripts/clear-cache.ts"
   },
   "dependencies": {
-    "@firecrawl/pdf-inspector": "^1.17.0",
     "docx": "^9.7.1",
     "next": "16.3.4",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "unpdf": "^1.8.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
